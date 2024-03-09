@@ -2,7 +2,7 @@ package components
 
 import "InternshipProject/backend/types"
 
-templ Sidebar(user types.User, tickets []types.Ticket) {
+templ Sidebar(user types.User) {
     <style type="text/css">
         .sidebar {
             position : fixed ;
@@ -50,34 +50,8 @@ templ Sidebar(user types.User, tickets []types.Ticket) {
         }
     </style>
     <div class="sidebar">
-        <button>
-                Submit Ticket
-        </button>
-        <button>
-            View Chats
-        </button>
-        <button>
-            Send pdf
-        </button>
-        <button>
-
-        </button>
-        <div class="profile">
-            <p>
-                email : <address>{ user.Email }</address>
-            </p>
-            <div style="border-top: 1px solid #000;"></div>
-            <p>
-                username : { user.Username }
-            </p>
-            <div style="border-top: 1px solid #000;"></div>
-            <p>
-                bureau : IT
-            </p>
-            <div style="border-top: 1px solid #000;"></div>
-            <p>
-                position : maintenance
-            </p>
-        </div>
+       { children... }
+       
+       { children... }
     </div>
 }

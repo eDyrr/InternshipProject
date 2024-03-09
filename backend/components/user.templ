@@ -1,0 +1,43 @@
+package components
+
+import "InternshipProject/backend/types"
+
+templ User(user types.User) {
+    <style type="text/css">
+        .container {
+            width : 70vw ;
+            height : 10vh ;
+            background-color : white ;
+            border : none ;
+            border-radius : 10px ;
+            display : flex ;
+            flex-direction : row ;
+            font-weight : bolder ;
+            /* align-items: center; */
+            margin-top : 10px ;
+            align-items : center ;
+            justify-content : space-between ;
+            gap : 0px ;
+        }
+        .container > div {
+
+        }
+    </style>
+    <div class="container">
+        <div>
+            { user.ID }
+        </div>
+        <div>
+            { user.Username }
+        </div>
+        <div>
+            { user.Email }
+        </div>
+        <div>
+            { user.Password }
+        </div>
+        <div>
+            { user.Role }
+        </div>
+    </div>
+}

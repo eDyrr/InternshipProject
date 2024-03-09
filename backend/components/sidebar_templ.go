@@ -12,7 +12,7 @@ import "bytes"
 
 import "InternshipProject/backend/types"
 
-func Sidebar(user types.User, tickets []types.Ticket) templ.Component {
+func Sidebar(user types.User) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -25,33 +25,19 @@ func Sidebar(user types.User, tickets []types.Ticket) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<style type=\"text/css\">\n        .sidebar {\n            position : fixed ;\n            right: 0px ;\n            z-index : 1 ;\n            overflow-x : hidden ;\n            background-color: black; \n            width : 20vw ; \n            height : 100vh; \n            display : flex ;\n            justify-content : center ; \n            align-items : center ; \n            flex-direction: column ;\n            border-left : 2px solid white ;\n        }\n        button {\n            width : 200px ; \n            height : 60px ;\n            /* background-color: #3C3633 ;  */\n            background-color : white ;\n            /* color : #EEEDEB ;  */\n            color : black ;\n            font-weight: bolder ;\n            border : none ;\n            border-radius : 10px ;\n            margin : 6px ;\n            font-size : 14px ;\n        }\n        button:hover {\n            /* background-color: #747264 ; */\n            background-color : rgb(180, 180, 180) ;\n        }\n        .profile {\n            /* background-color : #3C3633 ; */\n            background-color: white ;\n            /* color : #EEEDEB ; */\n            color : black ;\n            padding : 20px ;\n            border : none ;\n            border-radius : 10px ;\n            width : 160px ;\n            /* position : absolute ;\n            bottom : 40px ; */\n            margin-top : 60px ;\n        }\n    </style><div class=\"sidebar\"><button>Submit Ticket</button> <button>View Chats</button> <button>Send pdf</button> <button></button><div class=\"profile\"><p>email : <address>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<style type=\"text/css\">\n        .sidebar {\n            position : fixed ;\n            right: 0px ;\n            z-index : 1 ;\n            overflow-x : hidden ;\n            background-color: black; \n            width : 20vw ; \n            height : 100vh; \n            display : flex ;\n            justify-content : center ; \n            align-items : center ; \n            flex-direction: column ;\n            border-left : 2px solid white ;\n        }\n        button {\n            width : 200px ; \n            height : 60px ;\n            /* background-color: #3C3633 ;  */\n            background-color : white ;\n            /* color : #EEEDEB ;  */\n            color : black ;\n            font-weight: bolder ;\n            border : none ;\n            border-radius : 10px ;\n            margin : 6px ;\n            font-size : 14px ;\n        }\n        button:hover {\n            /* background-color: #747264 ; */\n            background-color : rgb(180, 180, 180) ;\n        }\n        .profile {\n            /* background-color : #3C3633 ; */\n            background-color: white ;\n            /* color : #EEEDEB ; */\n            color : black ;\n            padding : 20px ;\n            border : none ;\n            border-radius : 10px ;\n            width : 160px ;\n            /* position : absolute ;\n            bottom : 40px ; */\n            margin-top : 60px ;\n        }\n    </style><div class=\"sidebar\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var2 string
-		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(user.Email)
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/sidebar.templ`, Line: 66, Col: 45}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
+		templ_7745c5c3_Err = templ_7745c5c3_Var1.Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</address></p><div style=\"border-top: 1px solid #000;\"></div><p>username : ")
+		templ_7745c5c3_Err = templ_7745c5c3_Var1.Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var3 string
-		templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(user.Username)
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/sidebar.templ`, Line: 70, Col: 42}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><div style=\"border-top: 1px solid #000;\"></div><p>bureau : IT</p><div style=\"border-top: 1px solid #000;\"></div><p>position : maintenance</p></div></div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

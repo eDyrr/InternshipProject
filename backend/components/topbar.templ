@@ -1,0 +1,45 @@
+package components 
+
+templ Topbar() {
+    <style type="text/css">
+        .topbar {
+            background-color : white ;
+            width : 70vw ;
+            height : 5vh ;
+            border : none ;
+            border-radius : 10px ;
+            display : flex ;
+            flex-direction : row ;
+            justify-content: space-between;
+            align-items : center ;
+            padding : 10px ;
+            margin : 10px ;
+            position : sticky ;
+            top : 0 ;
+            z-index: 1000 ;
+        }
+        .topbar  > div {
+            margin : 0 ;
+        }
+    </style>
+    <div class="topbar">
+        <div>
+            #ID
+        </div>
+        <div>
+            username
+        </div>
+        <div>
+            email
+        </div>
+        <div>
+            password
+        </div>
+        <div>
+            role
+        </div>
+        <div>
+            bureau
+        </div>
+    </div>
+}

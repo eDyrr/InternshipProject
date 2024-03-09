@@ -45,13 +45,45 @@ func main() {
 	router.GET("/users", GetUsers)
 
 	router.GET("/user", func(c *gin.Context) {
-		user := types.User{
-			ID:       "1",
-			Username: "ehdyr",
-			Email:    "eDD@setif-univ.com",
-			Password: "somepassword",
-			Role:     "1",
-		}
+
+		user, _ := loadUsers(db)
+		// []types.User{
+		// 	{
+		// 		ID:       "1",
+		// 		Username: "ehdyr",
+		// 		Email:    "eDD@setif-univ.com",
+		// 		Password: "somepassword",
+		// 		Role:     "1",
+		// 	},
+		// 	{
+		// 		ID:       "2",
+		// 		Username: "ehdyr",
+		// 		Email:    "eDD@setif-univ.com",
+		// 		Password: "somepassword",
+		// 		Role:     "1",
+		// 	},
+		// 	{
+		// 		ID:       "3",
+		// 		Username: "ehdyr",
+		// 		Email:    "eDD@setif-univ.com",
+		// 		Password: "somepassword",
+		// 		Role:     "1",
+		// 	},
+		// 	{
+		// 		ID:       "4",
+		// 		Username: "ehdyr",
+		// 		Email:    "eDD@setif-univ.com",
+		// 		Password: "somepassword",
+		// 		Role:     "1",
+		// 	},
+		// 	{
+		// 		ID:       "5",
+		// 		Username: "ehdyr",
+		// 		Email:    "eDD@setif-univ.com",
+		// 		Password: "somepassword",
+		// 		Role:     "1",
+		// 	},
+		// }
 		ticket := []types.Ticket{
 			{
 				ID:       "1",
@@ -59,6 +91,48 @@ func main() {
 				Owner:    "edd",
 				Solution: "some solution",
 				Title:    "the first ticket",
+			},
+			{
+				ID:       "2",
+				Content:  "wassup",
+				Owner:    "edd",
+				Solution: "some solution",
+				Title:    "the 2nd ticket",
+			},
+			{
+				ID:       "3",
+				Content:  "wassup",
+				Owner:    "edd",
+				Solution: "some solution",
+				Title:    "the 3rd ticket",
+			},
+			{
+				ID:       "4",
+				Content:  "wassup",
+				Owner:    "edd",
+				Solution: "some solution",
+				Title:    "the 4th ticket",
+			},
+			{
+				ID:       "5",
+				Content:  "wassup",
+				Owner:    "edd",
+				Solution: "some solution",
+				Title:    "the 2nd ticket",
+			},
+			{
+				ID:       "6",
+				Content:  "wassup",
+				Owner:    "edd",
+				Solution: "some solution",
+				Title:    "the 3rd ticket",
+			},
+			{
+				ID:       "7",
+				Content:  "wassup",
+				Owner:    "edd",
+				Solution: "some solution",
+				Title:    "the 4th ticket",
 			},
 			{
 				ID:       "2",
@@ -332,4 +406,17 @@ func loadTickets(db *sql.DB) ([]types.Ticket, error) {
 		return nil, fmt.Errorf("error : %v", err)
 	}
 	return tickets, nil
+}
+
+func getRole(user types.User, db *sql.DB) (types.Role, error) {
+	var user_role types.Role
+	row := db.QueryRow("SELECT Roles.role FROM Roles INNER JOIN Users ON Users.role = Roles.ID WHERE Users.ID = ? ;", user.ID)
+
+	if err := row.Scan(&user_role.ID, &user_role.Role); err != nil {
+		if err == sql.ErrNoRows {
+			return user_role, fmt.Errorf("error : %v", err)
+		}
+		return user_role, fmt.Errorf("error : %v", err)
+	}
+	return user_role, nil
 }

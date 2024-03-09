@@ -2,9 +2,26 @@ package components
 
 import "InternshipProject/backend/types"
 
-templ UserPage(user types.User, tickets []types.Ticket) {
-        @Base() {
-            @Sidebar(user, tickets)
-            @Feed(user, tickets)
+templ UserPage(users []types.User, tickets []types.Ticket) {
+    @Base() {
+        @Sidebar(users[0])
+        @Feed() {
+            @Topbar()
+
+            /*for _, ticket := range tickets {
+                <div class="ticket">
+                    <div class="id-container">
+                        # { ticket.ID }
+                    </div>
+                    <p>
+                        { ticket.Title }
+                    </p>
+                </div>
+            }*/
+            
+            for _, user := range users {
+                @User(user)
+            }
         }
+    }
 }

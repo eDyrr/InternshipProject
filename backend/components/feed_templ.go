@@ -10,9 +10,7 @@ import "context"
 import "io"
 import "bytes"
 
-import "InternshipProject/backend/types"
-
-func Feed(user types.User, tickets []types.Ticket) templ.Component {
+func Feed() templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -25,41 +23,13 @@ func Feed(user types.User, tickets []types.Ticket) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<style type=\"text/css\">\n    .ticket {\n            width : 70vw ;\n            height : 10vh ;\n            /* background-color : #EEEDEB ; */\n            background-color : white ;\n            border : none ;\n            border-radius : 10px ;\n            display : flex ;\n            flex-direction : row ;\n            font-weight : bolder ;\n            align-items: center;\n            margin-top : 10px ;\n        }\n        .ticket > p {\n            margin-left : 20px ;\n            font-size : 20px ;\n        }\n        .ticket:hover {\n            /* background-color : #E0CCBE ; */\n            background-color : rgb(219, 219, 219) ;\n        }\n        .id-container {\n            height : 10vh ; \n            width : 10vw ;\n            /* background-color : #747264 ; */\n            background-color : rgb(46, 46, 46) ;\n            position : relative ;\n            left : 0 ;\n            border-top-left-radius: 10px ;\n            border-bottom-left-radius: 10px ;\n            display : flex ; \n            align-items : center ;\n            justify-content : center ;\n            /* color : #EEEDEB ; */\n            color : white ;\n            font-weight : bold ;\n            border : none ;\n        }\n        #feed {\n            width : 80vw ; \n            height : 100vh ;\n            display : flex ;\n            justify-content : center ;\n            align-items : center ;\n            position : relative ;\n            overflow-y : scroll ;\n            flex-direction: column ;\n            gap : 10px ;\n            /* background-color: #3C3633 ;  */\n            background-color : black ;\n        }\n    </style><div id=\"feed\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<style type=\"text/css\">\n    .ticket {\n            width : 70vw ;\n            height : 10vh ;\n            background-color : white ;\n            border : none ;\n            border-radius : 10px ;\n            display : flex ;\n            flex-direction : row ;\n            font-weight : bolder ;\n            align-items: center;\n            margin-top : 10px ;\n        }\n        .ticket > p {\n            margin-left : 20px ;\n            font-size : 20px ;\n        }\n        .ticket:hover {\n            background-color : rgb(219, 219, 219) ;\n        }\n        .id-container {\n            height : 10vh ; \n            width : 10vw ;\n            background-color : rgb(46, 46, 46) ;\n            position : relative ;\n            left : 0 ;\n            border-top-left-radius: 10px ;\n            border-bottom-left-radius: 10px ;\n            display : flex ; \n            align-items : center ;\n            justify-content : center ;\n            color : white ;\n            font-weight : bold ;\n            border : none ;\n        }\n        #feed {\n            width : 80vw ; \n            height : 100vh ;\n            display : flex ;\n            align-items : center ;\n            position : relative ;\n            overflow-y : scroll ;\n            flex-direction: column ;\n            gap : 10px ;\n            background-color : black ;\n        }\n    </style><div id=\"feed\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		for _, ticket := range tickets {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"ticket\"><div class=\"id-container\"># ")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			var templ_7745c5c3_Var2 string
-			templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(ticket.ID)
-			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/feed.templ`, Line: 62, Col: 33}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><p>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			var templ_7745c5c3_Var3 string
-			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(ticket.Title)
-			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/feed.templ`, Line: 65, Col: 34}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p></div>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
+		templ_7745c5c3_Err = templ_7745c5c3_Var1.Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div>")
 		if templ_7745c5c3_Err != nil {

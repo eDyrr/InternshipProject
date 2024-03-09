@@ -1,0 +1,26 @@
+package components
+
+import "InternshipProject/backend/types"
+
+templ Profile(user types.User) {
+    <style type="text/css">
+
+    </style>
+    <div>
+        <p>
+            email : <address>{ user.Email }</address>
+        </p>
+        <div style="border-top: 1px solid #000;"></div>
+        <p>
+            username : { user.Username }
+        </p>
+        <div style="border-top: 1px solid #000;"></div>
+        <p>
+            bureau : IT
+        </p>
+        <div style="border-top: 1px solid #000;"></div>
+        <p>
+            position : maintenance
+        </p>
+    </div>
+}
