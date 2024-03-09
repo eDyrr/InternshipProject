@@ -1,0 +1,72 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2024-03-09 19:17:18
+count workspace : /Users/edyrr/repos/stageProject/InternshipProject/backend/components
+total files : 18
+total code lines : 769
+total comment lines : 44
+total blank lines : 53
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |         .templ|            326|             17|             14|     42|
+   |            .go|            443|             27|             39|     58|
+   -------------------------------------------------------------------------
+admin.templ, code is 42, comment is 0, blank is 1.
+admin_templ.go, code is 28, comment is 3, blank is 4.
+base.templ, code is 20, comment is 0, blank is 1.
+base_templ.go, code is 36, comment is 3, blank is 4.
+feed.templ, code is 53, comment is 0, blank is 1.
+feed_templ.go, code is 36, comment is 3, blank is 4.
+profile.templ, code is 32, comment is 4, blank is 2.
+profile_templ.go, code is 55, comment is 3, blank is 5.
+sidebar.templ, code is 22, comment is 0, blank is 1.
+sidebar_templ.go, code is 36, comment is 3, blank is 4.
+ticketform.templ, code is 37, comment is 0, blank is 1.
+ticketform_templ.go, code is 28, comment is 3, blank is 4.
+topbar.templ, code is 50, comment is 0, blank is 1.
+topbar_templ.go, code is 28, comment is 3, blank is 4.
+user.templ, code is 54, comment is 0, blank is 2.
+user_templ.go, code is 94, comment is 3, blank is 5.
+userPage.templ, code is 16, comment is 13, blank is 4.
+userPage_templ.go, code is 102, comment is 3, blank is 5.
+===============================================================================
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2024-03-09 19:17:45
+count workspace : /Users/edyrr/repos/stageProject/InternshipProject/backend/components
+total files : 18
+total code lines : 769
+total comment lines : 44
+total blank lines : 53
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |         .templ|            326|             17|             14|     42|
+   |            .go|            443|             27|             39|     58|
+   -------------------------------------------------------------------------
+admin.templ, code is 42, comment is 0, blank is 1.
+admin_templ.go, code is 28, comment is 3, blank is 4.
+base.templ, code is 20, comment is 0, blank is 1.
+base_templ.go, code is 36, comment is 3, blank is 4.
+feed.templ, code is 53, comment is 0, blank is 1.
+feed_templ.go, code is 36, comment is 3, blank is 4.
+profile.templ, code is 32, comment is 4, blank is 2.
+profile_templ.go, code is 55, comment is 3, blank is 5.
+sidebar.templ, code is 22, comment is 0, blank is 1.
+sidebar_templ.go, code is 36, comment is 3, blank is 4.
+ticketform.templ, code is 37, comment is 0, blank is 1.
+ticketform_templ.go, code is 28, comment is 3, blank is 4.
+topbar.templ, code is 50, comment is 0, blank is 1.
+topbar_templ.go, code is 28, comment is 3, blank is 4.
+user.templ, code is 54, comment is 0, blank is 2.
+user_templ.go, code is 94, comment is 3, blank is 5.
+userPage.templ, code is 16, comment is 13, blank is 4.
+userPage_templ.go, code is 102, comment is 3, blank is 5.
+===============================================================================

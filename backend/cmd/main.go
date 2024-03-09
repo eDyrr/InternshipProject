@@ -84,79 +84,113 @@ func main() {
 		// 		Role:     "1",
 		// 	},
 		// }
-		ticket := []types.Ticket{
+		// roles := []types.Role{
+		// 	{
+		// 		ID:   "1",
+		// 		Role: "ADMIN",
+		// 	},
+		// 	{
+		// 		ID:   "2",
+		// 		Role: "EMPLOYEE",
+		// 	},
+		// 	{
+		// 		ID:   "3",
+		// 		Role: "TECHNICIAN",
+		// 	},
+		// }
+
+		// ticket := []types.Ticket{
+		// 	{
+		// 		ID:       "1",
+		// 		Content:  "hello there, this is the content of the ticket",
+		// 		Owner:    "edd",
+		// 		Solution: "some solution",
+		// 		Title:    "the first ticket",
+		// 	},
+		// 	{
+		// 		ID:       "2",
+		// 		Content:  "wassup",
+		// 		Owner:    "edd",
+		// 		Solution: "some solution",
+		// 		Title:    "the 2nd ticket",
+		// 	},
+		// 	{
+		// 		ID:       "3",
+		// 		Content:  "wassup",
+		// 		Owner:    "edd",
+		// 		Solution: "some solution",
+		// 		Title:    "the 3rd ticket",
+		// 	},
+		// 	{
+		// 		ID:       "4",
+		// 		Content:  "wassup",
+		// 		Owner:    "edd",
+		// 		Solution: "some solution",
+		// 		Title:    "the 4th ticket",
+		// 	},
+		// 	{
+		// 		ID:       "5",
+		// 		Content:  "wassup",
+		// 		Owner:    "edd",
+		// 		Solution: "some solution",
+		// 		Title:    "the 2nd ticket",
+		// 	},
+		// 	{
+		// 		ID:       "6",
+		// 		Content:  "wassup",
+		// 		Owner:    "edd",
+		// 		Solution: "some solution",
+		// 		Title:    "the 3rd ticket",
+		// 	},
+		// 	{
+		// 		ID:       "7",
+		// 		Content:  "wassup",
+		// 		Owner:    "edd",
+		// 		Solution: "some solution",
+		// 		Title:    "the 4th ticket",
+		// 	},
+		// 	{
+		// 		ID:       "2",
+		// 		Content:  "wassup",
+		// 		Owner:    "edd",
+		// 		Solution: "some solution",
+		// 		Title:    "the 2nd ticket",
+		// 	},
+		// 	{
+		// 		ID:       "3",
+		// 		Content:  "wassup",
+		// 		Owner:    "edd",
+		// 		Solution: "some solution",
+		// 		Title:    "the 3rd ticket",
+		// 	},
+		// 	{
+		// 		ID:       "4",
+		// 		Content:  "wassup",
+		// 		Owner:    "edd",
+		// 		Solution: "some solution",
+		// 		Title:    "the 4th ticket",
+		// 	},
+		// }
+		// _ = ticket
+		permissions := []types.Permission{
 			{
-				ID:       "1",
-				Content:  "hello there, this is the content of the ticket",
-				Owner:    "edd",
-				Solution: "some solution",
-				Title:    "the first ticket",
+				ID:         "1",
+				Permission: "perm 1",
 			},
 			{
-				ID:       "2",
-				Content:  "wassup",
-				Owner:    "edd",
-				Solution: "some solution",
-				Title:    "the 2nd ticket",
+				ID:         "2",
+				Permission: "perm 2",
 			},
 			{
-				ID:       "3",
-				Content:  "wassup",
-				Owner:    "edd",
-				Solution: "some solution",
-				Title:    "the 3rd ticket",
+				ID:         "3",
+				Permission: "perm 3",
 			},
 			{
-				ID:       "4",
-				Content:  "wassup",
-				Owner:    "edd",
-				Solution: "some solution",
-				Title:    "the 4th ticket",
-			},
-			{
-				ID:       "5",
-				Content:  "wassup",
-				Owner:    "edd",
-				Solution: "some solution",
-				Title:    "the 2nd ticket",
-			},
-			{
-				ID:       "6",
-				Content:  "wassup",
-				Owner:    "edd",
-				Solution: "some solution",
-				Title:    "the 3rd ticket",
-			},
-			{
-				ID:       "7",
-				Content:  "wassup",
-				Owner:    "edd",
-				Solution: "some solution",
-				Title:    "the 4th ticket",
-			},
-			{
-				ID:       "2",
-				Content:  "wassup",
-				Owner:    "edd",
-				Solution: "some solution",
-				Title:    "the 2nd ticket",
-			},
-			{
-				ID:       "3",
-				Content:  "wassup",
-				Owner:    "edd",
-				Solution: "some solution",
-				Title:    "the 3rd ticket",
-			},
-			{
-				ID:       "4",
-				Content:  "wassup",
-				Owner:    "edd",
-				Solution: "some solution",
-				Title:    "the 4th ticket",
+				ID:         "4",
+				Permission: "perm 4",
 			},
 		}
-		api.Render(c, components.UserPage(user, ticket))
+		api.Render(c, components.UserPage(user, permissions))
 	})
 
 	router.POST("/tickets", AddTicket)

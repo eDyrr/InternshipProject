@@ -1,0 +1,38 @@
+package components
+
+templ TicketForm() {
+    <style>
+        textarea {
+            width : 70vw ;
+            height : 30vh ;
+            border : none ;
+            border-radius : 5px ;
+            margin : 10px ;
+            color : black ;
+        }
+        input {
+            width : 70vw ;
+            height : 60px ;
+            border : none ;
+            border-radius : 5px ;
+            color : black ;
+        }
+        form {
+            padding : 0 ;
+            margin : 0 ;
+            display : flex ;
+            align-items : center ;
+            flex-direction : column ;
+        }
+    </style>
+    <form>
+        <input placeholder="TITLE : "/>
+        <div>
+            <textarea placeholder="CONTENT : ">
+            </textarea>
+        </div>
+    </form>
+    <button>
+        SUBMIT
+    </button>
+}

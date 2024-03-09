@@ -2,9 +2,12 @@ package components
 
 import "InternshipProject/backend/types"
 
-templ UserPage(users []types.User, tickets []types.Ticket) {
+templ UserPage(users []types.User, permissions []types.Permission) {
     @Base() {
-        @Sidebar(users[0])
+        @Sidebar() {
+            @Admin()
+            @Profile(users[0])
+        }
         @Feed() {
             @Topbar()
 
@@ -19,9 +22,19 @@ templ UserPage(users []types.User, tickets []types.Ticket) {
                 </div>
             }*/
             
-            for _, user := range users {
-                @User(user)
-            }
+            // for _, user := range users {
+            //     @User(user)
+            // }
+            <div style="display : flex ; align-items : center ; flex-direction : column; justify-content : center ;">
+                // @TicketForm()
+                // @Solution()
+                // for _, role := range roles {
+                //     @Role(role)
+                // }
+                for _, permission := range permissions {
+                    @Permission(permission)
+                }
+            </div>
         }
     }
 }

@@ -3,43 +3,49 @@ package components
 templ Topbar() {
     <style type="text/css">
         .topbar {
-            background-color : white ;
+            background-color : rgb(180, 180, 180) ;
             width : 70vw ;
-            height : 5vh ;
+            height : 60px ;
             border : none ;
-            border-radius : 10px ;
+            border-radius : 5px ;
             display : flex ;
             flex-direction : row ;
-            justify-content: space-between;
+            justify-content: center ;
             align-items : center ;
-            padding : 10px ;
             margin : 10px ;
             position : sticky ;
             top : 0 ;
             z-index: 1000 ;
+            margin-top : 25px ;
         }
         .topbar  > div {
+            flex : 1 ;
             margin : 0 ;
+            display : flex ;
+            align-items : center ;
+            justify-content : center ;
+            border-right : 1px solid black ;
+            font-weight : bolder ;
         }
     </style>
     <div class="topbar">
         <div>
-            #ID
+            ID
         </div>
         <div>
-            username
+            USERNAME
         </div>
         <div>
-            email
+            EMAIL
         </div>
         <div>
-            password
+            PASSWORD
         </div>
         <div>
-            role
+            ROLE
         </div>
-        <div>
-            bureau
+        <div style="border : none ;">
+            BUREAU
         </div>
     </div>
 }

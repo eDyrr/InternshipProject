@@ -12,7 +12,7 @@ import "bytes"
 
 import "InternshipProject/backend/types"
 
-func Profile(user types.User) templ.Component {
+func Role(role types.Role) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -25,33 +25,33 @@ func Profile(user types.User) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<style type=\"text/css\">\n        .profile {\n            /* background-color : #3C3633 ; */\n            background-color: white ;\n            /* color : #EEEDEB ; */\n            color : black ;\n            padding-left : 20px ;\n            padding-right : 20px ;\n            border : none ;\n            border-radius : 5px ;\n            width : 160px ;\n            /* position : absolute ;\n            bottom : 40px ; */\n            margin-top : 60px ;\n        }\n    </style><div class=\"profile\"><p>email : <address>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<style type=\"text/css\">\n        .container {\n            width : 70vw ;\n            height : 60px ;\n            background-color : white ;\n            border : none ;\n            border-radius : 5px ;\n            display : flex ;\n            flex-direction : row ;\n            font-weight : bolder ;\n            margin-top : 6px ;\n            align-items : center ;\n            justify-content : space-between;\n        }\n        .container:hover div {\n            background-color : rgb(180, 180, 180) ;\n            border-right : 1px solid black ;\n        }\n        .container:hover {\n            background-color : rgb(180, 180, 180) ;\n            border-right : 1px solid black ;\n        }\n        .container > div {\n            flex : 2 ;\n            display : flex ;\n            align-content : center ;\n            justify-content : center ;\n            border-right : 1px solid rgb(180, 180, 180) ;\n        }\n    </style><div class=\"container\"><div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var2 string
-		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(user.Email)
+		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(role.ID)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/profile.templ`, Line: 23, Col: 41}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/role.templ`, Line: 37, Col: 21}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</address></p><div style=\"border-top: 1px solid #000;\"></div><p>username : ")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div style=\"border : none ;\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var3 string
-		templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(user.Username)
+		templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(role.Role)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/profile.templ`, Line: 27, Col: 38}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/role.templ`, Line: 40, Col: 23}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><div style=\"border-top: 1px solid #000;\"></div><p>bureau : IT</p><div style=\"border-top: 1px solid #000;\"></div><p>position : maintenance</p></div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

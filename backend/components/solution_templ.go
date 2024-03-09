@@ -10,9 +10,7 @@ import "context"
 import "io"
 import "bytes"
 
-import "InternshipProject/backend/types"
-
-func Ticket(ticket types.Ticket) templ.Component {
+func Solution() templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -25,7 +23,7 @@ func Ticket(ticket types.Ticket) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div><form><div><label>title :</label> <input></div><div><label>content :</label> <textarea></textarea></div></form></div><button>Submit</button>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<style type=\"text/css\">\n        form {\n            padding : 0 ;\n            margin : 0 ;\n            display : flex ;\n            align-items : center ;\n            flex-direction : column ;\n        }\n        textarea {\n            width : 70vw ;\n            height : 30vh ;\n            border : none ;\n            border-radius : 5px ;\n            margin : 10px ;\n            color : black ;\n        }\n    </style><form><textarea placeholder=\"SOLUTION :\"></textarea></form>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

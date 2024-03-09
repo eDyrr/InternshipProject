@@ -1,0 +1,267 @@
+{
+    "extension": "linecounter",
+    "version": "0.2.7",
+    "workspace": "/Users/edyrr/repos/stageProject/InternshipProject/backend/components",
+    "linecount": [
+        {
+            "version": "0.2.7",
+            "counttime": "2024-03-09 19:17:18",
+            "filesum": 18,
+            "codesum": 769,
+            "commentsum": 44,
+            "blanksum": 53,
+            "statistics": {
+                ".templ": {
+                    "code": 326,
+                    "comment": 17,
+                    "blank": 14
+                },
+                ".go": {
+                    "code": 443,
+                    "comment": 27,
+                    "blank": 39
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 1,
+                    "code": 42,
+                    "comment": 0,
+                    "filename": "admin.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 28,
+                    "comment": 3,
+                    "filename": "admin_templ.go"
+                },
+                {
+                    "blank": 1,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "base.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 36,
+                    "comment": 3,
+                    "filename": "base_templ.go"
+                },
+                {
+                    "blank": 1,
+                    "code": 53,
+                    "comment": 0,
+                    "filename": "feed.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 36,
+                    "comment": 3,
+                    "filename": "feed_templ.go"
+                },
+                {
+                    "blank": 2,
+                    "code": 32,
+                    "comment": 4,
+                    "filename": "profile.templ"
+                },
+                {
+                    "blank": 5,
+                    "code": 55,
+                    "comment": 3,
+                    "filename": "profile_templ.go"
+                },
+                {
+                    "blank": 1,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "sidebar.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 36,
+                    "comment": 3,
+                    "filename": "sidebar_templ.go"
+                },
+                {
+                    "blank": 1,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "ticketform.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 28,
+                    "comment": 3,
+                    "filename": "ticketform_templ.go"
+                },
+                {
+                    "blank": 1,
+                    "code": 50,
+                    "comment": 0,
+                    "filename": "topbar.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 28,
+                    "comment": 3,
+                    "filename": "topbar_templ.go"
+                },
+                {
+                    "blank": 2,
+                    "code": 54,
+                    "comment": 0,
+                    "filename": "user.templ"
+                },
+                {
+                    "blank": 5,
+                    "code": 94,
+                    "comment": 3,
+                    "filename": "user_templ.go"
+                },
+                {
+                    "blank": 4,
+                    "code": 16,
+                    "comment": 13,
+                    "filename": "userPage.templ"
+                },
+                {
+                    "blank": 5,
+                    "code": 102,
+                    "comment": 3,
+                    "filename": "userPage_templ.go"
+                }
+            ]
+        },
+        {
+            "version": "0.2.7",
+            "counttime": "2024-03-09 19:17:45",
+            "filesum": 18,
+            "codesum": 769,
+            "commentsum": 44,
+            "blanksum": 53,
+            "statistics": {
+                ".templ": {
+                    "code": 326,
+                    "comment": 17,
+                    "blank": 14
+                },
+                ".go": {
+                    "code": 443,
+                    "comment": 27,
+                    "blank": 39
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 1,
+                    "code": 42,
+                    "comment": 0,
+                    "filename": "admin.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 28,
+                    "comment": 3,
+                    "filename": "admin_templ.go"
+                },
+                {
+                    "blank": 1,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "base.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 36,
+                    "comment": 3,
+                    "filename": "base_templ.go"
+                },
+                {
+                    "blank": 1,
+                    "code": 53,
+                    "comment": 0,
+                    "filename": "feed.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 36,
+                    "comment": 3,
+                    "filename": "feed_templ.go"
+                },
+                {
+                    "blank": 2,
+                    "code": 32,
+                    "comment": 4,
+                    "filename": "profile.templ"
+                },
+                {
+                    "blank": 5,
+                    "code": 55,
+                    "comment": 3,
+                    "filename": "profile_templ.go"
+                },
+                {
+                    "blank": 1,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "sidebar.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 36,
+                    "comment": 3,
+                    "filename": "sidebar_templ.go"
+                },
+                {
+                    "blank": 1,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "ticketform.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 28,
+                    "comment": 3,
+                    "filename": "ticketform_templ.go"
+                },
+                {
+                    "blank": 1,
+                    "code": 50,
+                    "comment": 0,
+                    "filename": "topbar.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 28,
+                    "comment": 3,
+                    "filename": "topbar_templ.go"
+                },
+                {
+                    "blank": 2,
+                    "code": 54,
+                    "comment": 0,
+                    "filename": "user.templ"
+                },
+                {
+                    "blank": 5,
+                    "code": 94,
+                    "comment": 3,
+                    "filename": "user_templ.go"
+                },
+                {
+                    "blank": 4,
+                    "code": 16,
+                    "comment": 13,
+                    "filename": "userPage.templ"
+                },
+                {
+                    "blank": 5,
+                    "code": 102,
+                    "comment": 3,
+                    "filename": "userPage_templ.go"
+                }
+            ]
+        }
+    ]
+}

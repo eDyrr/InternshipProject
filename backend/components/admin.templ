@@ -1,0 +1,43 @@
+package components
+
+templ Admin() {
+    <style type="text/css">
+        button {
+            width : 200px ; 
+            height : 60px ;
+            background-color : white ;
+            color : black ;
+            font-weight: bolder ;
+            border : none ;
+            border-radius : 5px ;
+            margin : 6px ;
+            font-size : 14px ;
+        }
+        button:hover {
+            background-color : rgb(180, 180, 180) ;
+        }
+        .admin-container {
+            display : flex ;
+            align-items : center ;
+            justify-content : center ;
+            flex-direction : column ;
+        }
+    </style>
+    <div class="admin-container">
+        <button>
+            TICKETS
+        </button>
+        <button>
+            USERS
+        </button>
+        <button>
+            ROLES
+        </button>
+        <button>
+            PERMISSIONS
+        </button>
+        <button>
+            CHATS
+        </button>
+    </div>
+}

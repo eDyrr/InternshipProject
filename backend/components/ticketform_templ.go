@@ -10,7 +10,7 @@ import "context"
 import "io"
 import "bytes"
 
-func Base() templ.Component {
+func TicketForm() templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -23,15 +23,7 @@ func Base() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en\"><head><title>employee</title><style type=\"text/css\">\n            body {\n                display : flex ;\n                flex-direction: row ;\n                padding : 0 ;\n                margin : 0 ;\n                font-family: \"Roboto\", Arial, sans-serif;\n            }\n        </style></head><body>")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templ_7745c5c3_Var1.Render(ctx, templ_7745c5c3_Buffer)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</body></html>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<style>\n        textarea {\n            width : 70vw ;\n            height : 30vh ;\n            border : none ;\n            border-radius : 5px ;\n            margin : 10px ;\n            color : black ;\n        }\n        input {\n            width : 70vw ;\n            height : 60px ;\n            border : none ;\n            border-radius : 5px ;\n            color : black ;\n        }\n        form {\n            padding : 0 ;\n            margin : 0 ;\n            display : flex ;\n            align-items : center ;\n            flex-direction : column ;\n        }\n    </style><form><input placeholder=\"TITLE : \"><div><textarea placeholder=\"CONTENT : \"></textarea></div></form><button>SUBMIT</button>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

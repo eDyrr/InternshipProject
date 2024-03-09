@@ -2,7 +2,7 @@ package components
 
 import "InternshipProject/backend/types"
 
-templ User(user types.User) {
+templ Role(role types.Role) {
     <style type="text/css">
         .container {
             width : 70vw ;
@@ -15,14 +15,7 @@ templ User(user types.User) {
             font-weight : bolder ;
             margin-top : 6px ;
             align-items : center ;
-            justify-content : space-between ;
-        }
-        .container > div {
-            display : flex ;
-            align-items : center ;
-            justify-content : center ;
-            border-right : 1px solid rgb(180, 180, 180) ;
-            flex : 1 ;
+            justify-content : space-between;
         }
         .container:hover div {
             background-color : rgb(180, 180, 180) ;
@@ -32,25 +25,20 @@ templ User(user types.User) {
             background-color : rgb(180, 180, 180) ;
             border-right : 1px solid black ;
         }
+        .container > div {
+            flex : 2 ;
+            display : flex ;
+            align-content : center ;
+            justify-content : center ;
+            border-right : 1px solid rgb(180, 180, 180) ;
+        }
     </style>
     <div class="container">
         <div>
-            { user.ID }
+            { role.ID }
         </div>
-        <div>
-            { user.Username }
-        </div>
-        <div>
-            { user.Email }
-        </div>
-        <div>
-            { user.Password }
-        </div>
-        <div>
-            { user.Role }
-        </div>
-        <div style="border : none ; ">
-            bureau 
+        <div style="border : none ;">
+            { role.Role }
         </div>
     </div>
 }
