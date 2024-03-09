@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    form {
+        max-width: 400px;
+        margin: 20px auto;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+    }
+</style>
+</head>
+<body>
+
+<form id="signup-form" action = "http://127.0.0.1:8090/api/collections/Users" method="post">
+    <h2>Sign Up</h2>
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <input type="submit" value="Sign Up">
+    <p id="message"></p>
+</form>
+
+<script>
+    import PocketBase from 'pocketbase';
+    const pb = new PocketBase('http://127.0.0.1:8090');
+
+document.getElementById('signup-form').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Fetch input values
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+
+
+
+// example create data
+const data = {
+    "username": name,
+    "email": email,
+    "emailVisibility": true,
+    "password": password,
+    "passwordConfirm": password
+};
+});
+
+const record = await pb.collection('Users').create(data)
+
+</script>
+
+</body>
+</html>

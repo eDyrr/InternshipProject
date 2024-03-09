@@ -1,0 +1,10 @@
+package components
+
+import "InternshipProject/backend/types"
+
+templ UserPage(user types.User, tickets []types.Ticket) {
+        @Base() {
+            @Sidebar(user, tickets)
+            @Feed(user, tickets)
+        }
+}

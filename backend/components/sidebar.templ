@@ -1,0 +1,83 @@
+package components
+
+import "InternshipProject/backend/types"
+
+templ Sidebar(user types.User, tickets []types.Ticket) {
+    <style type="text/css">
+        .sidebar {
+            position : fixed ;
+            right: 0px ;
+            z-index : 1 ;
+            overflow-x : hidden ;
+            background-color: black; 
+            width : 20vw ; 
+            height : 100vh; 
+            display : flex ;
+            justify-content : center ; 
+            align-items : center ; 
+            flex-direction: column ;
+            border-left : 2px solid white ;
+        }
+        button {
+            width : 200px ; 
+            height : 60px ;
+            /* background-color: #3C3633 ;  */
+            background-color : white ;
+            /* color : #EEEDEB ;  */
+            color : black ;
+            font-weight: bolder ;
+            border : none ;
+            border-radius : 10px ;
+            margin : 6px ;
+            font-size : 14px ;
+        }
+        button:hover {
+            /* background-color: #747264 ; */
+            background-color : rgb(180, 180, 180) ;
+        }
+        .profile {
+            /* background-color : #3C3633 ; */
+            background-color: white ;
+            /* color : #EEEDEB ; */
+            color : black ;
+            padding : 20px ;
+            border : none ;
+            border-radius : 10px ;
+            width : 160px ;
+            /* position : absolute ;
+            bottom : 40px ; */
+            margin-top : 60px ;
+        }
+    </style>
+    <div class="sidebar">
+        <button>
+                Submit Ticket
+        </button>
+        <button>
+            View Chats
+        </button>
+        <button>
+            Send pdf
+        </button>
+        <button>
+
+        </button>
+        <div class="profile">
+            <p>
+                email : <address>{ user.Email }</address>
+            </p>
+            <div style="border-top: 1px solid #000;"></div>
+            <p>
+                username : { user.Username }
+            </p>
+            <div style="border-top: 1px solid #000;"></div>
+            <p>
+                bureau : IT
+            </p>
+            <div style="border-top: 1px solid #000;"></div>
+            <p>
+                position : maintenance
+            </p>
+        </div>
+    </div>
+}

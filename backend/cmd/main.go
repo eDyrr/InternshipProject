@@ -1,6 +1,9 @@
 package main
 
 import (
+	"InternshipProject/backend/api"
+	"InternshipProject/backend/components"
+	"InternshipProject/backend/types"
 	"database/sql"
 	"fmt"
 	"log"
@@ -9,38 +12,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/go-sql-driver/mysql"
 )
-
-type User struct {
-	ID       string `json:"ID"`
-	Username string `json:"username"`
-	Email    string `json:"email"`
-	Password string `json:"password"`
-	Role     string `json:"role"`
-}
-
-type Permission struct {
-	ID         string `json:"ID"`
-	permission string `json:"permission"`
-}
-type Ticket struct {
-	ID       string `json:"ID"`
-	content  string `json:"content"`
-	owner    string `json:"owner_id"`
-	solution string `json:"solution_id"`
-	title    string `json:"title"`
-}
-
-type Solution struct {
-	ID       string `json:"ID"`
-	owner    string `json:"owner_id"`
-	ticket   string `json:"ticket_id"`
-	solution string `json:"solution"`
-}
-
-type Role struct {
-	ID   string `json:"ID"`
-	role string `json:"role"`
-}
 
 var db *sql.DB
 
@@ -73,7 +44,52 @@ func main() {
 	router.POST("/users", AddUser)
 	router.GET("/users", GetUsers)
 
+	router.GET("/user", func(c *gin.Context) {
+		user := types.User{
+			ID:       "1",
+			Username: "ehdyr",
+			Email:    "eDD@setif-univ.com",
+			Password: "somepassword",
+			Role:     "1",
+		}
+		ticket := []types.Ticket{
+			{
+				ID:       "1",
+				Content:  "hello there, this is the content of the ticket",
+				Owner:    "edd",
+				Solution: "some solution",
+				Title:    "the first ticket",
+			},
+			{
+				ID:       "2",
+				Content:  "wassup",
+				Owner:    "edd",
+				Solution: "some solution",
+				Title:    "the 2nd ticket",
+			},
+			{
+				ID:       "3",
+				Content:  "wassup",
+				Owner:    "edd",
+				Solution: "some solution",
+				Title:    "the 3rd ticket",
+			},
+			{
+				ID:       "4",
+				Content:  "wassup",
+				Owner:    "edd",
+				Solution: "some solution",
+				Title:    "the 4th ticket",
+			},
+		}
+		api.Render(c, components.UserPage(user, ticket))
+	})
+
 	router.POST("/tickets", AddTicket)
+	router.GET("/tickets", GetTickets)
+
+	router.GET("/permissions", GetPermissions)
+	router.GET("/roles", GetRoles)
 	router.Run("localhost:8080")
 
 }
@@ -87,7 +103,7 @@ func GetUsers(c *gin.Context) {
 }
 
 func GetPermissions(c *gin.Context) {
-	var permissions []Permission
+	var permissions []types.Permission
 	var err error
 
 	permissions, err = loadPermissions(db)
@@ -105,8 +121,16 @@ func GetTickets(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, tickets)
 }
 
+func GetRoles(c *gin.Context) {
+	roles, err := loadRoles(db)
+	if err != nil {
+		log.Fatal(err)
+	}
+	c.IndentedJSON(http.StatusOK, roles)
+}
+
 func AddUser(c *gin.Context) {
-	var user User
+	var user types.User
 
 	if err := c.BindJSON(&user); err != nil {
 		return
@@ -121,8 +145,26 @@ func AddUser(c *gin.Context) {
 	c.JSON(http.StatusCreated, user)
 }
 
+func loadRoles(db *sql.DB) ([]types.Role, error) {
+	roles := []types.Role{}
+
+	rows, err := db.Query("SELECT * FROM Roles ;")
+	if err != nil {
+		return nil, fmt.Errorf("error : %v", err)
+	}
+	defer db.Close()
+	for rows.Next() {
+		var ROLE types.Role
+		if err := rows.Scan(&ROLE.ID, &ROLE.Role); err != nil {
+			return nil, fmt.Errorf("error : %v", err)
+		}
+		roles = append(roles, ROLE)
+	}
+	return roles, nil
+}
+
 func AddTicket(c *gin.Context) {
-	var ticket Ticket
+	var ticket types.Ticket
 
 	if err := c.BindJSON(&ticket); err != nil {
 		return
@@ -137,7 +179,7 @@ func AddTicket(c *gin.Context) {
 }
 
 func AddSolution(c *gin.Context) {
-	var solution Solution
+	var solution types.Solution
 	if err := c.BindJSON(&solution); err != nil {
 		return
 	}
@@ -149,7 +191,7 @@ func AddSolution(c *gin.Context) {
 }
 
 func AddRole(c *gin.Context) {
-	var role Role
+	var role types.Role
 	if err := c.BindJSON(&role); err != nil {
 		return
 	}
@@ -162,7 +204,7 @@ func AddRole(c *gin.Context) {
 }
 
 func AddPermission(c *gin.Context) {
-	var permission Permission
+	var permission types.Permission
 	if err := c.BindJSON(&permission); err != nil {
 		return
 	}
@@ -175,8 +217,8 @@ func AddPermission(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, permission)
 }
 
-func insertPermission(permission Permission) (int64, error) {
-	result, err := db.Exec("INSERT INTO Permissions (permission) VALUES (?)", permission.permission)
+func insertPermission(permission types.Permission) (int64, error) {
+	result, err := db.Exec("INSERT INTO Permissions (permission) VALUES (?)", permission.Permission)
 	if err != nil {
 		return 0, fmt.Errorf("error : %v", err)
 	}
@@ -188,8 +230,8 @@ func insertPermission(permission Permission) (int64, error) {
 	return id, nil
 }
 
-func insertRole(role Role) (int64, error) {
-	result, err := db.Exec("INSERT INTO Roles (role) VALUES (?)", role.role)
+func insertRole(role types.Role) (int64, error) {
+	result, err := db.Exec("INSERT INTO Roles (role) VALUES (?)", role.Role)
 	if err != nil {
 		return 0, fmt.Errorf("error : %v", err)
 	}
@@ -200,8 +242,8 @@ func insertRole(role Role) (int64, error) {
 	}
 	return id, nil
 }
-func insertSolution(solution Solution) (int64, error) {
-	result, err := db.Exec("INSERT INTO Solutions (owner_id, ticket_id, solution) VALUES(?,?,?)", solution.owner, solution.ticket, solution.solution)
+func insertSolution(solution types.Solution) (int64, error) {
+	result, err := db.Exec("INSERT INTO Solutions (owner_id, ticket_id, solution) VALUES(?,?,?)", solution.Owner, solution.Ticket, solution.Solution)
 	if err != nil {
 		return 0, fmt.Errorf("error : %v", err)
 	}
@@ -211,8 +253,8 @@ func insertSolution(solution Solution) (int64, error) {
 	}
 	return id, nil
 }
-func insertTicket(ticket Ticket) (int64, error) {
-	result, err := db.Exec("INSERT INTO Tickets (content, owner_id, title) VALUES (?,?,?)", ticket.content, ticket.owner, ticket.title)
+func insertTicket(ticket types.Ticket) (int64, error) {
+	result, err := db.Exec("INSERT INTO Tickets (content, owner_id, title) VALUES (?,?,?)", ticket.Content, ticket.Owner, ticket.Title)
 	if err != nil {
 		return 0, fmt.Errorf("error : %v", err)
 	}
@@ -223,7 +265,7 @@ func insertTicket(ticket Ticket) (int64, error) {
 	return id, nil
 }
 
-func insertUser(user User) (int64, error) {
+func insertUser(user types.User) (int64, error) {
 	result, err := db.Exec("INSERT INTO Users (username, email, password, role) VALUES (?, ?, ?, ?)", user.Username, user.Email, user.Password, user.Role)
 
 	if err != nil {
@@ -235,15 +277,15 @@ func insertUser(user User) (int64, error) {
 	}
 	return id, nil
 }
-func loadUsers(db *sql.DB) ([]User, error) {
-	Users := []User{}
+func loadUsers(db *sql.DB) ([]types.User, error) {
+	Users := []types.User{}
 	rows, err := db.Query("SELECT * FROM Users ;")
 	if err != nil {
 		return nil, fmt.Errorf("error : %v", err)
 	}
 	defer rows.Close()
 	for rows.Next() {
-		var user User
+		var user types.User
 		if err := rows.Scan(&user.ID, &user.Username, &user.Email, &user.Password, &user.Role); err != nil {
 			return nil, fmt.Errorf("error : %v", err)
 		}
@@ -252,16 +294,16 @@ func loadUsers(db *sql.DB) ([]User, error) {
 	return Users, nil
 }
 
-func loadPermissions(db *sql.DB) ([]Permission, error) {
-	permissions := []Permission{}
+func loadPermissions(db *sql.DB) ([]types.Permission, error) {
+	permissions := []types.Permission{}
 	rows, err := db.Query("SELECT * FROM Permissions :")
 	if err != nil {
 		return nil, fmt.Errorf("error : %v", err)
 	}
 	defer rows.Close()
 	for rows.Next() {
-		var perm Permission
-		if err := rows.Scan(&perm.ID, &perm.permission); err != nil {
+		var perm types.Permission
+		if err := rows.Scan(&perm.ID, &perm.Permission); err != nil {
 			return nil, fmt.Errorf("error : %v", err)
 		}
 		permissions = append(permissions, perm)
@@ -272,16 +314,16 @@ func loadPermissions(db *sql.DB) ([]Permission, error) {
 	return permissions, nil
 }
 
-func loadTickets(db *sql.DB) ([]Ticket, error) {
-	tickets := []Ticket{}
+func loadTickets(db *sql.DB) ([]types.Ticket, error) {
+	tickets := []types.Ticket{}
 	rows, err := db.Query("SELECT * FROM Tickets ;")
 	if err != nil {
 		return nil, fmt.Errorf("error : %v", err)
 	}
 	defer rows.Close()
 	for rows.Next() {
-		var ticket Ticket
-		if err := rows.Scan(&ticket.ID, &ticket.content, &ticket.owner, &ticket.solution); err != nil {
+		var ticket types.Ticket
+		if err := rows.Scan(&ticket.ID, &ticket.Content, &ticket.Owner, &ticket.Solution); err != nil {
 			return nil, fmt.Errorf("error : %v", err)
 		}
 		tickets = append(tickets, ticket)

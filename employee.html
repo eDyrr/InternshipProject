@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>employee</title>
+    <style>
+        body {
+            display : flex ;
+            align-items: center ;
+            justify-content: flex ;
+            flex-direction: column;
+            position : relative ;
+            top : 70px ;
+        }
+        body > div {
+            flex : 1 ;
+            color : black ;
+        }
+        button {
+            width : 200px ;
+            height : 40px ;
+            color : white ; 
+            background-color: black ;
+            border : none ;
+            border-radius: 5px ;
+        }
+        button:hover {
+            background-color: rgb(74, 74, 74);
+        }
+        h1 {
+            text-align: center ;
+        }
+    </style>
+</head>
+<body>
+    <!-- TODO -->
+    <!-- add htmx -->
+    <!-- center the 4 divs in the middle of the screen -->
+    <!-- try and load some of the data from the backend -->
+    <div>
+        <h1>
+            Submit ticket
+        </h1>
+        <button hx-get="/tickets">
+            click
+        </button>
+    </div>
+    <div>
+        <h1>
+            View ticket
+        </h1>
+        <button>
+            click
+        </button>
+    </div>
+    <div>
+        <h1>
+            View chats
+        </h1>
+        <button>
+            click
+        </button>
+    </div>
+    <div>
+        <h1>
+            View profile
+        </h1>
+        <button>
+            click
+        </button>
+    </div>
+    <!-- submit a ticket -->
+    <!-- check my own tickets -->
+    <!-- interact with my tickes -->
+    <!-- check my chats -->
+    <!-- view profile -->
+</body>
+</html>
