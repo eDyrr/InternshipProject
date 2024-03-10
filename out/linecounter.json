@@ -1,0 +1,293 @@
+{
+    "extension": "linecounter",
+    "version": "0.2.7",
+    "workspace": "/Users/edyrr/repos/stageProject/InternshipProject",
+    "linecount": [
+        {
+            "version": "0.2.7",
+            "counttime": "2024-03-09 19:19:36",
+            "filesum": 38,
+            "codesum": 2068,
+            "commentsum": 254,
+            "blanksum": 368,
+            "statistics": {
+                ".sql": {
+                    "code": 53,
+                    "comment": 79,
+                    "blank": 66
+                },
+                ".go": {
+                    "code": 813,
+                    "comment": 64,
+                    "blank": 98
+                },
+                ".sum": {
+                    "code": 92,
+                    "comment": 1,
+                    "blank": 0
+                },
+                ".templ": {
+                    "code": 326,
+                    "comment": 17,
+                    "blank": 14
+                },
+                "": {
+                    "code": 3,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".mod": {
+                    "code": 35,
+                    "comment": 25,
+                    "blank": 4
+                },
+                ".css": {
+                    "code": 98,
+                    "comment": 5,
+                    "blank": 8
+                },
+                ".md": {
+                    "code": 296,
+                    "comment": 54,
+                    "blank": 157
+                },
+                ".html": {
+                    "code": 352,
+                    "comment": 9,
+                    "blank": 21
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "backend/api/user.go"
+                },
+                {
+                    "blank": 4,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "backend/api/utilities.go"
+                },
+                {
+                    "filename": "backend/backend",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 51,
+                    "code": 334,
+                    "comment": 37,
+                    "filename": "backend/cmd/main.go"
+                },
+                {
+                    "blank": 1,
+                    "code": 42,
+                    "comment": 0,
+                    "filename": "backend/components/admin.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 28,
+                    "comment": 3,
+                    "filename": "backend/components/admin_templ.go"
+                },
+                {
+                    "blank": 1,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "backend/components/base.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 36,
+                    "comment": 3,
+                    "filename": "backend/components/base_templ.go"
+                },
+                {
+                    "blank": 1,
+                    "code": 53,
+                    "comment": 0,
+                    "filename": "backend/components/feed.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 36,
+                    "comment": 3,
+                    "filename": "backend/components/feed_templ.go"
+                },
+                {
+                    "blank": 2,
+                    "code": 32,
+                    "comment": 4,
+                    "filename": "backend/components/profile.templ"
+                },
+                {
+                    "blank": 5,
+                    "code": 55,
+                    "comment": 3,
+                    "filename": "backend/components/profile_templ.go"
+                },
+                {
+                    "blank": 1,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "backend/components/sidebar.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 36,
+                    "comment": 3,
+                    "filename": "backend/components/sidebar_templ.go"
+                },
+                {
+                    "blank": 1,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "backend/components/ticketform.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 28,
+                    "comment": 3,
+                    "filename": "backend/components/ticketform_templ.go"
+                },
+                {
+                    "blank": 1,
+                    "code": 50,
+                    "comment": 0,
+                    "filename": "backend/components/topbar.templ"
+                },
+                {
+                    "blank": 4,
+                    "code": 28,
+                    "comment": 3,
+                    "filename": "backend/components/topbar_templ.go"
+                },
+                {
+                    "blank": 2,
+                    "code": 54,
+                    "comment": 0,
+                    "filename": "backend/components/user.templ"
+                },
+                {
+                    "blank": 5,
+                    "code": 94,
+                    "comment": 3,
+                    "filename": "backend/components/user_templ.go"
+                },
+                {
+                    "blank": 4,
+                    "code": 16,
+                    "comment": 13,
+                    "filename": "backend/components/userPage.templ"
+                },
+                {
+                    "blank": 5,
+                    "code": 102,
+                    "comment": 3,
+                    "filename": "backend/components/userPage_templ.go"
+                },
+                {
+                    "blank": 3,
+                    "code": 33,
+                    "comment": 25,
+                    "filename": "backend/go.mod"
+                },
+                {
+                    "blank": 0,
+                    "code": 92,
+                    "comment": 1,
+                    "filename": "backend/go.sum"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "backend/Makefile"
+                },
+                {
+                    "blank": 4,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "backend/types/types.go"
+                },
+                {
+                    "blank": 154,
+                    "code": 281,
+                    "comment": 54,
+                    "filename": "CHANGELOG.md"
+                },
+                {
+                    "blank": 66,
+                    "code": 53,
+                    "comment": 79,
+                    "filename": "database/schema.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 70,
+                    "comment": 9,
+                    "filename": "employee.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 54,
+                    "comment": 0,
+                    "filename": "frontend/dashboard.html"
+                },
+                {
+                    "blank": 8,
+                    "code": 73,
+                    "comment": 0,
+                    "filename": "frontend/employee.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 66,
+                    "comment": 0,
+                    "filename": "frontend/index.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "frontend/login.html"
+                },
+                {
+                    "blank": 10,
+                    "code": 56,
+                    "comment": 0,
+                    "filename": "frontend/signup.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "go.mod"
+                },
+                {
+                    "blank": 3,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "LICENSE.md"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 8,
+                    "code": 98,
+                    "comment": 5,
+                    "filename": "reset.css"
+                }
+            ]
+        }
+    ]
+}

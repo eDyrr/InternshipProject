@@ -1,0 +1,36 @@
+package components
+
+templ Ctrl() {
+    <style type="text/css">
+        .users-ctrl > button {
+            width : 59px ; 
+            height : 60px ;
+            background-color : white ;
+            color : black ;
+            font-weight: bolder ;
+            border : none ;
+            border-radius : 5px ;
+            margin : 6px ;
+            font-size : 14px ;
+        }
+        button:hover {
+            background-color : rgb(180, 180, 180) ;
+        }
+        .users-ctrl {
+            display : flex ;
+            flex-direction : row ;
+            margin: 0 ;
+        }
+    </style>
+    <div class="users-ctrl">
+        <button>
+            ADD
+        </button>
+        <button>
+            RMV
+        </button>
+        <button>
+            UPDT
+        </button>
+    </div>
+}

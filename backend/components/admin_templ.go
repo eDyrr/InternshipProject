@@ -10,7 +10,7 @@ import "context"
 import "io"
 import "bytes"
 
-func Admin() templ.Component {
+func Admin(current_page string) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -23,7 +23,53 @@ func Admin() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<style type=\"text/css\">\n        button {\n            width : 200px ; \n            height : 60px ;\n            background-color : white ;\n            color : black ;\n            font-weight: bolder ;\n            border : none ;\n            border-radius : 5px ;\n            margin : 6px ;\n            font-size : 14px ;\n        }\n        button:hover {\n            background-color : rgb(180, 180, 180) ;\n        }\n        .admin-container {\n            display : flex ;\n            align-items : center ;\n            justify-content : center ;\n            flex-direction : column ;\n        }\n    </style><div class=\"admin-container\"><button>TICKETS</button> <button>USERS</button> <button>ROLES</button> <button>PERMISSIONS</button> <button>CHATS</button></div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<style type=\"text/css\">\n        button {\n            width : 200px ; \n            height : 60px ;\n            background-color : white ;\n            color : black ;\n            font-weight: bolder ;\n            border : none ;\n            border-radius : 5px ;\n            margin : 6px ;\n            font-size : 14px ;\n        }\n        button:hover {\n            background-color : rgb(180, 180, 180) ;\n        }\n        .admin-container {\n            display : flex ;\n            align-items : center ;\n            justify-content : center ;\n            flex-direction : column ;\n        }\n    </style><div class=\"admin-container\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		switch current_page {
+		case "user":
+			templ_7745c5c3_Err = Ctrl().Render(ctx, templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(" <button class=\"ticket-btn\">TICKETS</button> <button>ROLES</button> <button>PERMISSIONS</button> <button>CHATS</button>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		case "ticket":
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<button>USERS</button> <button class=\"ticket-btn\">TICKETS</button> <button>ROLES</button> <button>PERMISSIONS</button> <button>CHATS</button>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		case "permission":
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<button>USERS</button> <button class=\"ticket-btn\">TICKETS</button> <button>ROLES</button>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = Ctrl().Render(ctx, templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(" <button>CHATS</button>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		case "role":
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<button>USERS</button> <button class=\"ticket-btn\">TICKETS</button>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = Ctrl().Render(ctx, templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(" <button>PERMISSIONS</button> <button>CHATS</button>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

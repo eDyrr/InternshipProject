@@ -25,14 +25,14 @@ func Profile(user types.User) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<style type=\"text/css\">\n        .profile {\n            /* background-color : #3C3633 ; */\n            background-color: white ;\n            /* color : #EEEDEB ; */\n            color : black ;\n            padding-left : 20px ;\n            padding-right : 20px ;\n            border : none ;\n            border-radius : 5px ;\n            width : 160px ;\n            /* position : absolute ;\n            bottom : 40px ; */\n            margin-top : 60px ;\n        }\n    </style><div class=\"profile\"><p>email : <address>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<style type=\"text/css\">\n        .profile {\n            /* background-color : #3C3633 ; */\n            background-color: white ;\n            /* color : #EEEDEB ; */\n            color : black ;\n            padding-left : 20px ;\n            padding-right : 20px ;\n            border : none ;\n            border-radius : 5px ;\n            width : 160px ;\n            /* height : 200px ;*/\n            /* position : absolute ;\n            bottom : 40px ; */\n            margin-top : 60px ;\n        }\n    </style><div class=\"profile\"><p>email : <address>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var2 string
 		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(user.Email)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/profile.templ`, Line: 23, Col: 41}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/profile.templ`, Line: 24, Col: 41}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 		if templ_7745c5c3_Err != nil {
@@ -45,7 +45,7 @@ func Profile(user types.User) templ.Component {
 		var templ_7745c5c3_Var3 string
 		templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(user.Username)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/profile.templ`, Line: 27, Col: 38}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/profile.templ`, Line: 28, Col: 38}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 		if templ_7745c5c3_Err != nil {

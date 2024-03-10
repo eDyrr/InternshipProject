@@ -1,0 +1,63 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2024-03-09 19:19:36
+count workspace : /Users/edyrr/repos/stageProject/InternshipProject
+total files : 38
+total code lines : 2068
+total comment lines : 254
+total blank lines : 368
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |           .sql|             53|             79|             66|    2.6|
+   |            .go|            813|             64|             98|     39|
+   |           .sum|             92|              1|              0|    4.4|
+   |         .templ|            326|             17|             14|     16|
+   |               |              3|              0|              0|   0.15|
+   |           .mod|             35|             25|              4|    1.7|
+   |           .css|             98|              5|              8|    4.7|
+   |            .md|            296|             54|            157|     14|
+   |          .html|            352|              9|             21|     17|
+   -------------------------------------------------------------------------
+backend/api/user.go, code is 1, comment is 0, blank is 0.
+backend/api/utilities.go, code is 6, comment is 0, blank is 4.
+backend/backend, it is a binary file.
+backend/cmd/main.go, code is 334, comment is 37, blank is 51.
+backend/components/admin.templ, code is 42, comment is 0, blank is 1.
+backend/components/admin_templ.go, code is 28, comment is 3, blank is 4.
+backend/components/base.templ, code is 20, comment is 0, blank is 1.
+backend/components/base_templ.go, code is 36, comment is 3, blank is 4.
+backend/components/feed.templ, code is 53, comment is 0, blank is 1.
+backend/components/feed_templ.go, code is 36, comment is 3, blank is 4.
+backend/components/profile.templ, code is 32, comment is 4, blank is 2.
+backend/components/profile_templ.go, code is 55, comment is 3, blank is 5.
+backend/components/sidebar.templ, code is 22, comment is 0, blank is 1.
+backend/components/sidebar_templ.go, code is 36, comment is 3, blank is 4.
+backend/components/ticketform.templ, code is 37, comment is 0, blank is 1.
+backend/components/ticketform_templ.go, code is 28, comment is 3, blank is 4.
+backend/components/topbar.templ, code is 50, comment is 0, blank is 1.
+backend/components/topbar_templ.go, code is 28, comment is 3, blank is 4.
+backend/components/user.templ, code is 54, comment is 0, blank is 2.
+backend/components/user_templ.go, code is 94, comment is 3, blank is 5.
+backend/components/userPage.templ, code is 16, comment is 13, blank is 4.
+backend/components/userPage_templ.go, code is 102, comment is 3, blank is 5.
+backend/go.mod, code is 33, comment is 25, blank is 3.
+backend/go.sum, code is 92, comment is 1, blank is 0.
+backend/Makefile, code is 3, comment is 0, blank is 0.
+backend/types/types.go, code is 29, comment is 0, blank is 4.
+CHANGELOG.md, code is 281, comment is 54, blank is 154.
+database/schema.sql, code is 53, comment is 79, blank is 66.
+employee.html, code is 70, comment is 9, blank is 0.
+frontend/dashboard.html, code is 54, comment is 0, blank is 2.
+frontend/employee.html, code is 73, comment is 0, blank is 8.
+frontend/index.html, code is 66, comment is 0, blank is 0.
+frontend/login.html, code is 33, comment is 0, blank is 1.
+frontend/signup.html, code is 56, comment is 0, blank is 10.
+go.mod, code is 2, comment is 0, blank is 1.
+LICENSE.md, code is 14, comment is 0, blank is 3.
+README.md, code is 1, comment is 0, blank is 0.
+reset.css, code is 98, comment is 5, blank is 8.
+===============================================================================

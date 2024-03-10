@@ -1,6 +1,6 @@
 package components
 
-templ Admin() {
+templ Admin(current_page string) {
     <style type="text/css">
         button {
             width : 200px ; 
@@ -24,20 +24,65 @@ templ Admin() {
         }
     </style>
     <div class="admin-container">
-        <button>
-            TICKETS
-        </button>
-        <button>
-            USERS
-        </button>
-        <button>
-            ROLES
-        </button>
-        <button>
-            PERMISSIONS
-        </button>
-        <button>
-            CHATS
-        </button>
+        switch current_page {
+            case "user" :
+                @Ctrl()
+                <button class="ticket-btn">
+                    TICKETS
+                </button>
+                <button>
+                    ROLES
+                </button>
+                <button>
+                    PERMISSIONS
+                </button>
+                <button>
+                    CHATS
+                </button>
+            case "ticket" :
+                <button>
+                    USERS
+                </button>
+                <button class="ticket-btn">
+                    TICKETS
+                </button>
+                <button>
+                    ROLES
+                </button>
+                <button>
+                    PERMISSIONS
+                </button>
+                <button>
+                    CHATS
+                </button>
+            case "permission" :
+                <button>
+                    USERS
+                </button>
+                <button class="ticket-btn">
+                    TICKETS
+                </button>
+                <button>
+                    ROLES
+                </button>
+                    @Ctrl()
+                <button>
+                    CHATS
+                </button>
+            case "role" :
+                <button>
+                    USERS
+                </button>
+                <button class="ticket-btn">
+                    TICKETS
+                </button>
+                    @Ctrl()
+                <button>
+                    PERMISSIONS
+                </button>
+                <button>
+                    CHATS
+                </button>
+        }
     </div>
 }

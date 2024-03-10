@@ -24,15 +24,26 @@ templ TicketForm() {
             align-items : center ;
             flex-direction : column ;
         }
+        #ticket {
+            width : 100% ;
+            height : 100% ;
+            display : flex ;
+            align-items : center ;
+            justify-content : center ;
+            flex-direction : column ;
+            position : absolute ;
+            top : 0 ;
+            left : 0 ;
+        }
     </style>
-    <form>
-        <input placeholder="TITLE : "/>
-        <div>
-            <textarea placeholder="CONTENT : ">
-            </textarea>
-        </div>
-    </form>
-    <button>
-        SUBMIT
-    </button>
+    <div id="ticket">
+        <form >
+            <input placeholder="TITLE : "/>
+            <div>
+                <textarea placeholder="CONTENT : ">
+                </textarea>
+            </div>
+            <button hx-post="/user/ticketsub" target="#ticket" hx-swap="innerHTML" trigger="click">SUBMIT</button>
+        </form>
+    </div>
 }

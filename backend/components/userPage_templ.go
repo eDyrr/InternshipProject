@@ -12,7 +12,7 @@ import "bytes"
 
 import "InternshipProject/backend/types"
 
-func UserPage(users []types.User, permissions []types.Permission) templ.Component {
+func UserPage(users []types.User, roles []types.Role) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -37,7 +37,7 @@ func UserPage(users []types.User, permissions []types.Permission) templ.Componen
 					templ_7745c5c3_Buffer = templ.GetBuffer()
 					defer templ.ReleaseBuffer(templ_7745c5c3_Buffer)
 				}
-				templ_7745c5c3_Err = Admin().Render(ctx, templ_7745c5c3_Buffer)
+				templ_7745c5c3_Err = Admin("permission").Render(ctx, templ_7745c5c3_Buffer)
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
@@ -68,19 +68,13 @@ func UserPage(users []types.User, permissions []types.Permission) templ.Componen
 					templ_7745c5c3_Buffer = templ.GetBuffer()
 					defer templ.ReleaseBuffer(templ_7745c5c3_Buffer)
 				}
-				templ_7745c5c3_Err = Topbar().Render(ctx, templ_7745c5c3_Buffer)
-				if templ_7745c5c3_Err != nil {
-					return templ_7745c5c3_Err
-				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("     <div style=\"display : flex ; align-items : center ; flex-direction : column; justify-content : center ;\">")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				for _, permission := range permissions {
-					templ_7745c5c3_Err = Permission(permission).Render(ctx, templ_7745c5c3_Buffer)
-					if templ_7745c5c3_Err != nil {
-						return templ_7745c5c3_Err
-					}
+				templ_7745c5c3_Err = TicketForm().Render(ctx, templ_7745c5c3_Buffer)
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div>")
 				if templ_7745c5c3_Err != nil {

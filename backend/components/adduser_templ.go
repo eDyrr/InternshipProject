@@ -10,7 +10,7 @@ import "context"
 import "io"
 import "bytes"
 
-func Sidebar() templ.Component {
+func Adduser() templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -23,15 +23,7 @@ func Sidebar() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<style type=\"text/css\">\n        .sidebar {\n            position : fixed ;\n            right: 0px ;\n            z-index : 1 ;\n            overflow-x : hidden ;\n            background-color: black; \n            width : 20vw ; \n            height : 100vh; \n            display : flex ;\n            justify-content : center ; \n            align-items : center ; \n            flex-direction: column ;\n            border-left : 2px solid rgb(180, 180, 180) ;\n        }\n    </style><div class=\"sidebar\">")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templ_7745c5c3_Var1.Render(ctx, templ_7745c5c3_Buffer)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<style type=\"text/css\">\n        input {\n            width : 30vw ;\n            height : 60px ;\n            border : none ;\n            border-radius : 5px ;\n            color : black ;\n            margin : 6px ;\n        }\n        form {\n            padding : 0 ;\n            margin : 0 ;\n            display : flex ;\n            align-items : center ;\n            flex-direction : column ;\n            position : relative ;\n            top : 44% ;\n        }\n    </style><form><input placeholder=\"username\"> <input placeholder=\"email\"> <input placeholder=\"password\"> <input placeholder=\"role\"> <input placeholder=\"burea\"></form>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
