@@ -282,16 +282,19 @@ func loadRoles(db *sql.DB) ([]types.Role, error) {
 func AddTicket(c *gin.Context) {
 	var ticket types.Ticket
 
-	if err := c.BindJSON(&ticket); err != nil {
+	if err := c.ShouldBindJSON(&ticket); err != nil {
 		return
 	}
 	ticket.Owner = "3"
+	ticket.Solution = "some basic solution"
+
 	_, err := insertTicket(ticket)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
 	c.IndentedJSON(http.StatusCreated, ticket)
+	fmt.Println(ticket.Title)
 }
 
 func AddSolution(c *gin.Context) {

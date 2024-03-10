@@ -38,12 +38,14 @@ templ TicketForm() {
     </style>
     <div id="ticket">
         <form >
-            <input placeholder="TITLE : "/>
+            <input type="text" name="title" placeholder="TITLE : "/>
             <div>
-                <textarea placeholder="CONTENT : ">
+                <textarea type="text" name="content" placeholder="CONTENT : ">
                 </textarea>
             </div>
-            <button hx-post="/user/ticketsub" target="#ticket" hx-swap="innerHTML" trigger="click">SUBMIT</button>
+            <button hx-post="/user/ticketsub" trigger="click">SUBMIT</button>
         </form>
     </div>
 }
+
+//target="#ticket" hx-swap="innerHTML"
