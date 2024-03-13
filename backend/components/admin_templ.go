@@ -23,53 +23,7 @@ func Admin(current_page string) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<style type=\"text/css\">\n        button {\n            width : 200px ; \n            height : 60px ;\n            background-color : white ;\n            color : black ;\n            font-weight: bolder ;\n            border : none ;\n            border-radius : 5px ;\n            margin : 6px ;\n            font-size : 14px ;\n        }\n        button:hover {\n            background-color : rgb(180, 180, 180) ;\n        }\n        .admin-container {\n            display : flex ;\n            align-items : center ;\n            justify-content : center ;\n            flex-direction : column ;\n        }\n    </style><div class=\"admin-container\">")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		switch current_page {
-		case "user":
-			templ_7745c5c3_Err = Ctrl().Render(ctx, templ_7745c5c3_Buffer)
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(" <button class=\"ticket-btn\">TICKETS</button> <button>ROLES</button> <button>PERMISSIONS</button> <button>CHATS</button>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-		case "ticket":
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<button>USERS</button> <button class=\"ticket-btn\">TICKETS</button> <button>ROLES</button> <button>PERMISSIONS</button> <button>CHATS</button>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-		case "permission":
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<button>USERS</button> <button class=\"ticket-btn\">TICKETS</button> <button>ROLES</button>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			templ_7745c5c3_Err = Ctrl().Render(ctx, templ_7745c5c3_Buffer)
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(" <button>CHATS</button>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-		case "role":
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<button>USERS</button> <button class=\"ticket-btn\">TICKETS</button>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			templ_7745c5c3_Err = Ctrl().Render(ctx, templ_7745c5c3_Buffer)
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(" <button>PERMISSIONS</button> <button>CHATS</button>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<script src=\"https://unpkg.com/htmx.org@1.9.10\" integrity=\"sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC\" crossorigin=\"anonymous\"></script><style type=\"text/css\">\n        button {\n            width : 200px ; \n            height : 60px ;\n            background-color : white ;\n            color : black ;\n            font-weight: bolder ;\n            border : none ;\n            border-radius : 5px ;\n            margin : 6px ;\n            font-size : 14px ;\n        }\n        button:hover {\n            background-color : rgb(180, 180, 180) ;\n        }\n        .admin-container {\n            display : flex ;\n            align-items : center ;\n            justify-content : center ;\n            flex-direction : column ;\n        }\n    </style><div class=\"admin-container\"><button id=\"user-btn\" hx-get=\"/ctrl\" target=\"#user-btn\" hx-swap=\"outerHTML\">USERS</button> <button>TICKETS</button> <button>PERMISSIONS</button> <button>ROLES</button></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -79,3 +33,64 @@ func Admin(current_page string) templ.Component {
 		return templ_7745c5c3_Err
 	})
 }
+
+// switch current_page {
+//             case "user" :
+//                 @Ctrl()
+//                 <button>
+//                     TICKETS
+//                 </button>
+//                 <button>
+//                     ROLES
+//                 </button>
+//                 <button>
+//                     PERMISSIONS
+//                 </button>
+//                 <button>
+//                     CHATS
+//                 </button>
+//             case "ticket" :
+//                 <button>
+//                     USERS
+//                 </button>
+//                 <button>
+//                     TICKETS
+//                 </button>
+//                 <button>
+//                     ROLES
+//                 </button>
+//                 <button>
+//                     PERMISSIONS
+//                 </button>
+//                 <button>
+//                     CHATS
+//                 </button>
+//             case "permission" :
+//                 <button>
+//                     USERS
+//                 </button>
+//                 <button>
+//                     TICKETS
+//                 </button>
+//                 <button>
+//                     ROLES
+//                 </button>
+//                     @Ctrl()
+//                 <button>
+//                     CHATS
+//                 </button>
+//             case "role" :
+//                 <button>
+//                     USERS
+//                 </button>
+//                 <button>
+//                     TICKETS
+//                 </button>
+//                     @Ctrl()
+//                 <button>
+//                     PERMISSIONS
+//                 </button>
+//                 <button>
+//                     CHATS
+//                 </button>
+//         }

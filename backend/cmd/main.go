@@ -39,7 +39,6 @@ func main() {
 	fmt.Print("connection success!\n")
 
 	gin.SetMode(gin.ReleaseMode)
-
 	router := gin.Default()
 	// router.POST("/users", AddUser)
 	// router.GET("/users", GetUsers)
@@ -195,19 +194,31 @@ func main() {
 	// 	api.Render(c, components.UserPage(user, permissions))
 	// })
 
-	router.GET("/user", func(c *gin.Context) {
+	router.GET("/users", func(c *gin.Context) {
 		api.Render(c, components.UserPage(user, roles))
 		// c.IndentedJSON(http.StatusOK, user)
 	})
+	router.GET("/ctrl/user", func(c *gin.Context) {
+		components.Ctrl().Render(c, c.Writer)
+	})
+	router.GET("/ctrl/permission", func(c *gin.Context) {
+		components.Ctrl().Render(c, c.Writer)
+	})
+	router.GET("/ctrl/role", func(c *gin.Context) {
+		components.Ctrl().Render(c, c.Writer)
+	})
+	router.GET("/ctrl/ticket", func(c *gin.Context) {
+		components.Ctrl().Render(c, c.Writer)
+	})
 
-	router.POST("/user/ticketsub", AddTicket)
+	// router.POST("/user/ticketsub", AddTicket)
+	router.POST("/submission", AddUser)
 	// router.POST("/tickets", AddTicket)
 	// router.GET("/tickets", GetTickets)
 
 	// router.GET("/permissions", GetPermissions)
 	// router.GET("/roles", GetRoles)
 	router.Run("localhost:8080")
-
 }
 
 func GetUsers(c *gin.Context) {
@@ -248,17 +259,21 @@ func GetRoles(c *gin.Context) {
 func AddUser(c *gin.Context) {
 	var user types.User
 
-	if err := c.BindJSON(&user); err != nil {
+	if err := c.Bind(&user); err != nil {
 		return
 	}
-	id, err := insertUser(user)
+	// c.JSON(200, gin.H{"username": user.Username,
+	// 	"email":    user.Email,
+	// 	"password": user.Password,
+	// 	"role":     user.Role,
+	// },
+	// )
+	components.Success("user").Render(c, c.Writer)
+	_, err := insertUser(user)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
-
-	user.ID = fmt.Sprintf("%d", id)
-	c.JSON(http.StatusCreated, user)
 }
 
 func loadRoles(db *sql.DB) ([]types.Role, error) {

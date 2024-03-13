@@ -1,6 +1,8 @@
 package components
 
 templ Admin(current_page string) {
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+
     <style type="text/css">
         button {
             width : 200px ; 
@@ -24,65 +26,78 @@ templ Admin(current_page string) {
         }
     </style>
     <div class="admin-container">
-        switch current_page {
-            case "user" :
-                @Ctrl()
-                <button class="ticket-btn">
-                    TICKETS
-                </button>
-                <button>
-                    ROLES
-                </button>
-                <button>
-                    PERMISSIONS
-                </button>
-                <button>
-                    CHATS
-                </button>
-            case "ticket" :
-                <button>
-                    USERS
-                </button>
-                <button class="ticket-btn">
-                    TICKETS
-                </button>
-                <button>
-                    ROLES
-                </button>
-                <button>
-                    PERMISSIONS
-                </button>
-                <button>
-                    CHATS
-                </button>
-            case "permission" :
-                <button>
-                    USERS
-                </button>
-                <button class="ticket-btn">
-                    TICKETS
-                </button>
-                <button>
-                    ROLES
-                </button>
-                    @Ctrl()
-                <button>
-                    CHATS
-                </button>
-            case "role" :
-                <button>
-                    USERS
-                </button>
-                <button class="ticket-btn">
-                    TICKETS
-                </button>
-                    @Ctrl()
-                <button>
-                    PERMISSIONS
-                </button>
-                <button>
-                    CHATS
-                </button>
-        }
+        <button id="user-btn" hx-get="/ctrl" target="#user-btn" hx-swap="outerHTML">
+            USERS
+        </button>
+        <button>
+            TICKETS
+        </button>
+        <button>
+            PERMISSIONS
+        </button>
+        <button>
+            ROLES
+        </button>
     </div>
 }
+
+// switch current_page {
+//             case "user" :
+//                 @Ctrl()
+//                 <button>
+//                     TICKETS
+//                 </button>
+//                 <button>
+//                     ROLES
+//                 </button>
+//                 <button>
+//                     PERMISSIONS
+//                 </button>
+//                 <button>
+//                     CHATS
+//                 </button>
+//             case "ticket" :
+//                 <button>
+//                     USERS
+//                 </button>
+//                 <button>
+//                     TICKETS
+//                 </button>
+//                 <button>
+//                     ROLES
+//                 </button>
+//                 <button>
+//                     PERMISSIONS
+//                 </button>
+//                 <button>
+//                     CHATS
+//                 </button>
+//             case "permission" :
+//                 <button>
+//                     USERS
+//                 </button>
+//                 <button>
+//                     TICKETS
+//                 </button>
+//                 <button>
+//                     ROLES
+//                 </button>
+//                     @Ctrl()
+//                 <button>
+//                     CHATS
+//                 </button>
+//             case "role" :
+//                 <button>
+//                     USERS
+//                 </button>
+//                 <button>
+//                     TICKETS
+//                 </button>
+//                     @Ctrl()
+//                 <button>
+//                     PERMISSIONS
+//                 </button>
+//                 <button>
+//                     CHATS
+//                 </button>
+//         }

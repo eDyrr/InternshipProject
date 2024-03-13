@@ -1,11 +1,11 @@
 package types
 
 type User struct {
-	ID       string `json:"ID"`
-	Username string `json:"username"`
-	Email    string `json:"email"`
-	Password string `json:"password"`
-	Role     string `json:"role"`
+	ID       string `form:"ID"`
+	Username string `form:"username"`
+	Email    string `form:"email"`
+	Password string `form:"password"`
+	Role     string `form:"role"`
 }
 
 type Permission struct {
